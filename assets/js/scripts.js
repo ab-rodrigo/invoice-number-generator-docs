@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const themeToggles = document.querySelectorAll(".darkModeToggle");
 
     function applyTheme(theme) {
-        htmlElement.setAttribute("data-bs-theme", theme);
-        localStorage.setItem("bs-theme", theme);
+        htmlElement.setAttribute("data-invoice-number-generator-docs-bs-theme", theme);
+        localStorage.setItem("invoice-number-generator-docs-bs-theme", theme);
 
         themeToggles.forEach(function (toggle) {
             if (theme === "dark") {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const savedTheme = localStorage.getItem("bs-theme");
+    const savedTheme = localStorage.getItem("invoice-number-generator-docs-bs-theme");
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     themeToggles.forEach(function (toggle) {
         toggle.addEventListener("click", function () {
-            const currentTheme = htmlElement.getAttribute("data-bs-theme");
+            const currentTheme = htmlElement.getAttribute("data-invoice-number-generator-docs-bs-theme");
             const newTheme = currentTheme === "dark" ? "light" : "dark";
             applyTheme(newTheme);
         });
