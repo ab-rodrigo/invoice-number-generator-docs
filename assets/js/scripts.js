@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "../invoice-number-generator-docs/"
             );
 
-            localStorage.setItem("user-manual-lang", manualPath);
+            localStorage.setItem("invoice-number-generator-docs-user-manual-lang", manualPath);
         });
     });
 });
