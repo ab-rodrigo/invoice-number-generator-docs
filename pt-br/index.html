@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Documentação do Invoice Number Generator para OpenCart 4.x</title>
+
+	<meta name="description" content="Documentação oficial da extensão Invoice Number Generator para OpenCart 4.x. Gere automaticamente prefixos dinâmicos e números de faturas. Licenciado sob GPL-3.0.">
+	<meta name="keywords" content="extensão OpenCart, Invoice Number Generator, módulo OpenCart, gerador de SKU, gerador de fatura, OpenCart Free, OpenCart Full">
+	<meta name="author" content="Rodrigo Barbosa">
+	<meta name="robots" content="index, follow">
+	<meta name="google-site-verification" content="zPyVJYaub4ml5pKFbiSkWVdMsWfrfFBOb29BVziNOu0" />
+
+	<link rel="canonical" href="https://ab-rodrigo.github.io/invoice-number-generator-docs/pt-pt/">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Documentação do Invoice Number Generator para OpenCart 4.x">
+	<meta property="og:description" content="Gere automaticamente prefixos dinâmicos e números de faturas. Versões Free e Full disponíveis.">
+	<meta property="og:url" content="https://ab-rodrigo.github.io/invoice-number-generator-docs/pt-pt/">
+	<meta property="og:site_name" content="Documentação Invoice Number Generator">
+	<meta property="og:locale" content="pt_PT">
+
+	<meta property="og:image" content="https://ab-rodrigo.github.io/invoice-number-generator-docs/assets/social-preview.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Invoice Number Generator para OpenCart 4.x">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Documentação do Invoice Number Generator para OpenCart 4.x">
+	<meta name="twitter:description" content="Gere automaticamente prefixos dinâmicos e números de faturas. Versões Free e Full disponíveis.">
+	<meta name="twitter:image" content="https://ab-rodrigo.github.io/invoice-number-generator-docs/assets/social-preview.png">
+
+	<link rel="icon" type="image/x-icon" href="/invoice-number-generator-docs/assets/images/favicon.ico">
+
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://getbootstrap.com/docs/5.0/assets/css/docs.css" rel="stylesheet" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
+    
+    <link href="../assets/css/style.css?v=1.0.1" rel="stylesheet" />
+
+	<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Invoice Number Generator for OpenCart",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "OpenCart",
+        "description": "Automatically generate invoice prefixes and numbers in OpenCart 4.x.",
+        "url": "https://ab-rodrigo.github.io/invoice-number-generator-docs/",
+        "author": {
+            "@type": "Person",
+            "name": "Rodrigo Barbosa"
+        },
+        "softwareVersion": "4.x",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+
+			<nav class="navbar navbar-expand-lg fixed-top bg-body border-bottom shadow-sm" aria-label="Invoice Number Generator para OpenCart 4.x">
+				<div class="container-fluid d-flex align-items-center" style="min-height: 65px;">
+					
+					<div class="d-flex align-items-center">
+						<button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Abrir menu">
+							<i class="fa-solid fa-bars-staggered fs-4"></i>
+						</button>
+						<a class="navbar-brand ms-2 ms-lg-0 d-flex flex-column lh-1" href="#">
+							<span class="fw-bold fs-4 text-body">Invoice Number Generator</span>
+							<small class="text-body-tertiary fw-normal" style="font-size: 0.75rem;">OpenCart 4.x</small>
+						</a>
+					</div>
+
+					<div class="d-flex align-items-center gap-2">
+						<button class="darkModeToggle btn btn-link text-body-secondary p-2" type="button" aria-pressed="false" title="Alternar tema">
+							<i class="fa-solid fa-moon fs-5"></i>
+						</button>
+
+						<div class="dropdown">
+							<button class="btn btn-link text-body-secondary p-2 dropdown-toggle no-caret" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="fa-solid fa-language fs-5"></i>
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end">
+								<li>
+									<a class="dropdown-item d-flex justify-content-between align-items-center lang-option" href="../en-gb/index.html" hreflang="en-gb" data-lang="en-gb">
+										<span class="d-flex align-items-center"><span class="fi fi-gb me-2"></span>English</span>
+									</a>
+								</li>
+
+								<li>
+									<a class="dropdown-item d-flex justify-content-between align-items-center lang-option" href="../en-us/index.html" hreflang="en-us" data-lang="en-us">
+										<span class="d-flex align-items-center"><span class="fi fi-us me-2"></span>English</span>
+									</a>
+								</li>
+
+								<li>
+									<a class="dropdown-item d-flex justify-content-between align-items-center lang-option" href="../es-es/index.html" hreflang="es-es" data-lang="es-es">
+										<span class="d-flex align-items-center"><span class="fi fi-es me-2"></span>Español</span>
+									</a>
+								</li>
+
+								<li>
+									<a class="dropdown-item d-flex justify-content-between align-items-center lang-option" href="../fr-fr/index.html" hreflang="fr-fr" data-lang="fr-fr">
+										<span class="d-flex align-items-center"><span class="fi fi-fr me-2"></span>Français</span>
+									</a>
+								</li>
+
+								<li>
+									<a class="dropdown-item d-flex justify-content-between align-items-center lang-option" href="../it-it/index.html" hreflang="it-it" data-lang="it-it">
+										<span class="d-flex align-items-center"><span class="fi fi-it me-2"></span>Italiano</span>
+									</a>
+								</li>
+
+								<li>
+									<a class="dropdown-item d-flex justify-content-between align-items-center lang-option" href="../pt-br/index.html" hreflang="pt-br" data-lang="pt-br">
+										<span class="d-flex align-items-center"><span class="fi fi-br me-2"></span>Português</span>
+									</a>
+								</li>
+
+								<li>
+									<a class="dropdown-item d-flex justify-content-between align-items-center lang-option" href="../pt-pt/index.html" hreflang="pt-pt" data-lang="pt-pt">
+										<span class="d-flex align-items-center"><span class="fi fi-pt me-2"></span>Português</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<a class="btn btn-success rounded px-3 d-none d-sm-flex align-items-center fw-medium" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">
+							<i class="fa-solid fa-download me-2"></i> Download
+						</a>
+						<a class="btn btn-success rounded-circle d-sm-none p-2" target="_blank" rel="noopener" href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr">
+							<i class="fa-solid fa-download"></i>
+						</a>
+					</div>
+				</div>
+			</nav>
+
+			<aside class="col-lg-3 col-xl-2 sidebar border-end pe-0" id="col-aside">
+				<div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+					<div class="offcanvas-header bg-body-tertiary">
+						<h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">Documentação</h5>
+						<button type="button" class="btn-close offcanvas-dismiss" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+					</div>
+					
+					<div class="offcanvas-body p-0">
+						<nav id="nav" class="w-100 p-3 ps-2">
+							<ul class="nav flex-column gap-1">
+								
+								<li class="nav-item">
+									<a class="nav-link d-flex align-items-center px-2 offcanvas-dismiss" href="#section-welcome">
+										<div style="width: 24px;" class="text-center me-2"><i class="fa fa-home opacity-75"></i></div>
+										<span>Bem-vindo</span>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link d-flex align-items-center px-2 text-body-secondary" 
+									data-bs-toggle="collapse" href="#about-collapse" role="button" aria-expanded="false">
+										<div style="width: 24px;" class="text-center me-2"><i class="fa fa-info opacity-75"></i></div>
+										<span>Sobre o Módulo</span>
+										<i class="fa-solid fa-chevron-down ms-auto fs-xs" style="font-size: 0.7rem;"></i>
+									</a>
+									<div class="collapse" id="about-collapse">
+										<ul class="nav flex-column ms-4 border-start ps-3 py-1 gap-1">
+											<li><a class="nav-link py-1 small offcanvas-dismiss" href="#item-about-overview">Visão geral</a></li>
+											<li><a class="nav-link py-1 small offcanvas-dismiss" href="#item-about-features">Recursos Principais</a></li>
+											<li><a class="nav-link py-1 small offcanvas-dismiss" href="#item-about-support">Suporte e Licença</a></li>
+										</ul>
+									</div>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link d-flex align-items-center px-2 offcanvas-dismiss" href="#section-structure">
+										<div style="width: 24px;" class="text-center me-2"><i class="fa-solid fa-shapes opacity-75"></i></div>
+										<span>Estrutura do número</span>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link d-flex align-items-center px-2 offcanvas-dismiss" href="#section-installation">
+										<div style="width: 24px;" class="text-center me-2"><i class="fa-solid fa-download opacity-75"></i></div>
+										<span>Instalação</span>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link d-flex align-items-center px-2 text-body-secondary" 
+									data-bs-toggle="collapse" href="#settings-collapse" role="button" aria-expanded="false">
+										<div style="width: 24px;" class="text-center me-2"><i class="fa-solid fa-gears opacity-75"></i></div>
+										<span>Configuração</span>
+										<i class="fa-solid fa-chevron-down ms-auto fs-xs" style="font-size: 0.7rem;"></i>
+									</a>
+									<div class="collapse" id="settings-collapse">
+										<ul class="nav flex-column ms-4 border-start ps-3 py-1 gap-1">
+											<li><a class="nav-link py-1 small offcanvas-dismiss" href="#section-settings">Configurações</a></li>
+											<li><a class="nav-link py-1 small offcanvas-dismiss" href="#item-settings-general">Geral</a></li>
+											<li><a class="nav-link py-1 small offcanvas-dismiss" href="#item-settings-prefix">Prefixo</a></li>
+										</ul>
+									</div>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link d-flex align-items-center px-2 offcanvas-dismiss" href="#section-using">
+										<div style="width: 24px;" class="text-center me-2"><i class="fa-solid fa-arrow-down-1-9 opacity-75"></i></div>
+										<span>Gerando números</span>
+									</a>
+								</li>
+
+								<li class="nav-item mt-2 pt-2 border-top">
+									<a class="nav-link d-flex align-items-center px-2 text-danger offcanvas-dismiss" href="#section-uninstall">
+										<div style="width: 24px;" class="text-center me-2"><i class="fa-regular fa-trash-can"></i></div>
+										<span>Desinstalar</span>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link d-flex align-items-center px-2 text-warning offcanvas-dismiss" href="#section-coffee">
+										<div style="width: 24px;" class="text-center me-2"><i class="fa-solid fa-mug-hot"></i></div>
+										<span>Alguém disse café?</span>
+									</a>
+								</li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center px-2 text-warning offcanvas-dismiss" href="#section-license">
+                                        <div style="width: 24px;" class="text-center me-2"><i class="fa-solid fa-scale-balanced me-1"></i></div>
+                                        <span>Licença</span>
+                                    </a>
+                                </li>
+
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</aside>
+
+			<div class="col-lg-9 col-xl-10 col-xxl-10 d-flex align-content-between flex-wrap justify-content-center" id="col-main">
+				<main role="main" class="container mt-2">
+
+					<article id="section-welcome" class="welcome-section mt-4 mb-5 p-5 bg-primary text-white rounded shadow-lg text-center position-relative overflow-hidden">
+                        <div class="position-relative z-index-1">
+                            <i class="fa-solid fa-rocket fa-3x mb-3 opacity-75" aria-hidden="true"></i>
+                            <h1 class="display-5 fw-bold">Bem-vindo</h1>
+                            <p class="lead mx-auto" style="max-width: 700px;">
+                                Aprenda a instalar, configurar e criar prefixos dinâmicos para suas faturas.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article id="section-about" class="about-section border-top px-0 py-5 text-body"> 
+                        <section id="item-about-overview" class="mb-5">
+                            <div class="row align-items-center">
+                                <div class="col-lg-7">
+                                    <h2 class="h3 fw-bold mb-3"><i class="fa-solid fa-circle-info text-primary me-2" aria-hidden="true"></i>Visão Geral</h2>
+                                    <p class="text-body-secondary lead">
+                                        Crie prefixos dinâmicos e números de faturas exclusivos e padronizados para cada loja.
+                                    </p>
+                                    <p class="text-body-secondary">
+                                        Solução definitiva para lojistas que buscam padronizar e organizar seus números de faturas. Com uma abordagem inovadora baseada em prefixos dinâmicos, este módulo permite criar regras personalizadas para cada loja.  
+                                    </p>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="p-4 bg-body-tertiary rounded h-100 border border-secondary-subtle">
+                                        <h2 class="h5 fw-bold"><i class="fa-solid fa-list-check text-primary me-2" aria-hidden="true"></i>Requisitos</h2>
+                                        <p class="small text-body-secondary">Certifique-se de ter permissões em:</p>
+                                        <ul class="list-unstyled small fw-bold text-primary">
+                                            <li><i class="fa-solid fa-check me-2" aria-hidden="true"></i>Instalador e Gerenciador de Extensões</li>
+                                            <li><i class="fa-solid fa-check me-2" aria-hidden="true"></i>Gerenciador de pedidos</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="item-about-features" class="about-features border-top px-0 py-5 text-body">
+                            <h2 class="h3 fw-bold mb-4 text-center text-body">Recursos Principais</h2>
+                            
+                            <div class="row g-3 text-body">
+                                
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 bg-body border-primary-subtle shadow-sm border-2">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <i class="fa-solid fa-magic-wand-sparkles text-primary mb-3 fs-4" aria-hidden="true"></i>
+                                                <span class="badge bg-primary rounded-pill small">Praticidade</span>
+                                            </div>
+                                            <h3 class="h6 fw-bold">Autopreenchimento</h3>
+                                            <p class="small text-body-secondary mb-0">O número de fatura é criado automaticamente após a conclusão do pedido.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 bg-body border-success-subtle shadow-sm border-2">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <i class="fa-solid fa-layer-group text-success mb-3 fs-4" aria-hidden="true"></i>
+                                                <span class="badge bg-success rounded-pill small">Gerenciamento</span>
+                                            </div>
+                                            <h3 class="h6 fw-bold">Multiloja</h3>
+                                            <p class="small text-body-secondary mb-0">
+                                                Crie prefixos dinâmicos exclusivos para cada loja, garantindo organização e rastreabilidade mesmo em ambientes complexos.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 bg-body border-info-subtle shadow-sm">
+                                        <div class="card-body">
+                                            <i class="fa-solid fa-globe text-info mb-3 fs-4" aria-hidden="true"></i>
+                                            <h3 class="h6 fw-bold">Interface Multi Idiomas</h3>
+                                            <p class="small text-body-info mb-0">Interface intuitiva com traduções nativas em PT, EN, FR, ES e IT.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </section>
+
+                        <section id="item-about-support" class="mb-5">
+                            <h2 class="h3 fw-bold mb-4 text-center text-body">Suporte e licença</h2>
+                            <div class="row g-4 mt-2">
+                                <div class="col-md-6">
+                                    <div class="p-4 bg-body-tertiary rounded h-100 border border-secondary-subtle">
+                                        <h2 class="h5 fw-bold"><i class="fa-solid fa-headset text-primary me-2" aria-hidden="true"></i>Suporte</h2>
+                                        <p class="small text-body-secondary">Precisa de ajuda?</p>
+                                        <a href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                            Obter Suporte <i class="fa-solid fa-external-link ms-1 small" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="p-4 bg-body-tertiary rounded h-100 border border-secondary-subtle">
+                                        <h2 class="h5 fw-bold"><i class="fa-solid fa-scale-balanced text-primary me-2" aria-hidden="true"></i>Licença</h2>
+                                        <p class="small text-body-secondary mb-3">Software distribuído sob os termos:</p>
+                                        <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer" class="text-decoration-none fw-bold small">
+                                            GPL v3.0 <i class="fa-solid fa-arrow-right-long ms-1" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </article>
+
+                    <article id="section-structure" class="structure-section border-top px-0 py-5 text-body">
+                        <header class="mb-5 text-center">
+                            <div class="text-start">
+                                <h2 class="h3 fw-bold"><i class="fa-solid fa-sitemap text-primary me-2" aria-hidden="true"></i>Estrutura do Número da Fatura</h2>
+                                <p class="text-body-secondary lead mx-auto">
+                                    A formação do número da fatura é modular e flexível, dividida em dois componentes.
+                                </p>
+                            </div>
+                            
+                            <div class="d-inline-flex flex-wrap justify-content-center bg-body-tertiary p-3 rounded border shadow-sm mt-3 text-center">
+                                <div class="px-2 border-end border-secondary-subtle"><small class="d-block text-uppercase text-primary fw-bold" style="font-size: 0.65rem;">Prefixo</small><span class="h5 font-monospace mb-0">ABC-XYZ-</span></div>
+                                <div class="px-2 border-secondary-subtle"><small class="d-block text-uppercase text-success fw-bold" style="font-size: 0.65rem;">Sequencial</small><span class="h5 font-monospace mb-0 text-success">0001</span></div>
+                            </div>
+                        </header>
+
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="card h-100 bg-body-tertiary border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5 fw-bold mb-3 text-primary"><i class="fa-solid fa-indent me-2" aria-hidden="true"></i>Prefixos</h3>
+                                        <p class="small text-body-secondary">Identificadores macro que precedem o número sequencial (ex: <code>ABC-XYZ-</code>).</p>
+                                        <ul class="list-unstyled small mb-0">
+                                            <li class="mb-2"><i class="fa-solid fa-check text-primary me-2" aria-hidden="true"></i><strong>Modular:</strong> Segmentado em múltiplos blocos.</li>
+                                            <li class="mb-2"><i class="fa-solid fa-check text-primary me-2" aria-hidden="true"></i><strong>Escalável:</strong> Adicione quantos blocos desejar.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="card h-100 bg-body border-success-subtle shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5 fw-bold mb-3 text-success"><i class="fa-solid fa-arrow-down-1-9 me-2" aria-hidden="true"></i>Sequencial Numérico</h3>
+                                        <p class="small text-body-secondary">O núcleo sequencial obrigatório (ex: <code>0001</code>), garantindo a exclusividade.</p>
+                                        <ul class="list-unstyled small mb-0">
+                                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2" aria-hidden="true"></i><strong>Padding:</strong> Preenchimento de zeros à esquerda.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-5">
+                            <div class="p-4 bg-warning-subtle rounded shadow-sm mb-4">
+                                <h3 class="h6 fw-bold text-warning-emphasis"><i class="fa-solid fa-triangle-exclamation me-2" aria-hidden="true"></i>Atenção: Sensibilidade aos Separadores</h3>
+                                <p class="small text-warning-emphasis mb-3">
+                                A estrutura processa cada caractere de forma literal, vinculando a sequência numérica à combinação de prefixos e separadores.
+                                    <strong>Qualquer alteração — como a troca de um hífen (-) por uma barra (/) — define uma nova identidade</strong>, reiniciando automaticamente a sequência numérica para esse identificador específico.
+                                </p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-borderless mb-0">
+                                        <tbody class="small">
+                                            <tr>
+                                                <td style="width: 210px;"><code class="text-primary-emphasis bg-primary-subtle px-2 py-1 rounded border border-primary-subtle">ABC-XYZ-0001</code></td>
+                                                <td class="text-body-secondary"><i class="fa-solid fa-arrow-right me-1 opacity-50" aria-hidden="true"></i> Padrão de referência.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code class="text-danger-emphasis bg-danger-subtle px-2 py-1 rounded border border-danger-subtle">ABC<span class="fw-bold text-decoration-underline">/</span>XYZ-0001</code></td>
+                                                <td class="text-body-secondary"><i class="fa-solid fa-xmark text-danger me-1" aria-hidden="true"></i> A barra altera o prefixo: contagem reinicia para este novo grupo.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 p-4 bg-body-tertiary rounded shadow-sm">
+                                <h3 class="h6 mb-3 fw-bold text-body">
+                                    <i class="fa-solid fa-lightbulb text-warning me-2" aria-hidden="true"></i> Dica de Padronização:
+                                </h3>
+                                <p class="small text-body-secondary mb-3">
+                                    Para manter a legibilidade em etiquetas e relatórios, utilize siglas curtas para representar.
+                                </p>
+                                
+                                <div class="d-flex flex-column gap-2">
+                                    <div class="small">
+                                        <i class="fa-solid fa-check text-success me-2" aria-hidden="true"></i>
+                                        <span class="text-body-secondary">Recomendado:</span>
+                                        <code class="text-primary-emphasis bg-primary-subtle px-2 py-1 rounded border border-primary-subtle ms-1">
+                                            INV-ST1-001
+                                        </code>
+                                        <small class="text-muted ms-2">(Invoice - Store 1)</small>
+                                    </div>
+
+                                    <div class="small">
+                                        <i class="fa-solid fa-xmark text-danger me-2" aria-hidden="true"></i>
+                                        <span class="text-body-secondary">Evite:</span>
+                                        <code class="text-danger-emphasis bg-danger-subtle px-2 py-1 rounded border border-danger-subtle ms-1">
+                                            INVOICE-STORE01-001
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+					<article id="section-installation" class="installation-section border-top px-0 py-5 text-body">
+						<header class="mb-5">
+							<h2 class="h3 fw-bold">
+								<i class="fa-solid fa-download text-primary me-2"></i>Instalação
+							</h2>
+							<p class="text-body-secondary lead">Siga as etapas abaixo para integrar o módulo ao seu sistema OpenCart de forma segura.</p>
+						</header>
+
+						<div class="row g-4">
+							<div class="col-md-4">
+								<div class="card h-100 bg-body-tertiary border-0 shadow-sm">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-primary me-2 px-3 py-2">01</span>
+											<h3 class="h6 mb-0 fw-bold">Download</h3>
+										</div>
+										<p class="small text-body-secondary mb-3">
+											Obtenha o módulo oficial diretamente no marketplace do OpenCart:
+										</p>
+										<a href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" target="_blank" class="btn btn-sm btn-outline-primary w-100 rounded-pill">
+											<i class="fa-solid fa-cloud-arrow-down me-1"></i> Página Oficial
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="card h-100 bg-body-tertiary border-0 shadow-sm">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-primary me-2 px-3 py-2">02</span>
+											<h3 class="h6 mb-0 fw-bold">Upload</h3>
+										</div>
+										<p class="small text-body-secondary">
+											No painel da loja, acesse <strong>Extensões > Instalador</strong>. Clique em 
+											<i class="fa-solid fa-upload bg-primary text-white align-middle rounded-1" style="font-size: 0.65rem;padding: 4px;"></i> <strong>Upload</strong> e selecione o arquivo baixado.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="card h-100 bg-body-tertiary border-0 shadow-sm">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-primary me-2 px-3 py-2">03</span>
+											<h3 class="h6 mb-0 fw-bold">Ativação</h3>
+										</div>
+										<p class="small text-body-secondary">
+											Localize o módulo na lista de extensões instaladas e clique no ícone de 
+											<i class="fa-solid fa-square-plus text-success fs-5 align-middle"></i> 
+											<strong>Instalar</strong> para ativá-lo.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="mt-5 p-3 bg-info-subtle rounded d-flex align-items-center">
+							<i class="fa-solid fa-circle-info text-info fs-4 me-3"></i>
+							<div class="text-info-emphasis small">
+								<strong>Dica Técnica:</strong> Após a ativação, lembre-se de acessar <strong>Extensões > Modificações</strong> e clicar no botão <strong>Atualizar</strong> (ícone azul) para limpar o cache do sistema.
+							</div>
+						</div>
+					</article>
+
+					<article id="section-settings" class="settings-section border-top px-0 py-5 text-body">
+						<header class="mb-5">
+							<h2 class="h3 fw-bold"><i class="fa-solid fa-gear text-primary me-2"></i>Acesso às Configurações</h2>
+							<p class="text-body-secondary lead">Após a instalação, siga este fluxo para configurar sua automação.</p>
+						</header>
+
+						<div class="row g-3 mb-5">
+							<div class="col-md-4">
+								<div class="p-3 bg-body-tertiary border rounded-3 h-100">
+									<div class="d-flex align-items-center mb-3">
+										<span class="badge rounded-pill bg-primary me-2 px-3 py-2">01</span>
+										<h3 class="h6 mb-0 fw-bold">Menu Lateral</h3>
+									</div>
+									<p class="small text-body-secondary mb-0">Acesse <strong>Extensões > Extensões</strong>.</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="p-3 bg-body-tertiary border rounded-3 h-100">
+									<div class="d-flex align-items-center mb-3">
+										<span class="badge rounded-pill bg-primary me-2 px-3 py-2">02</span>
+										<h3 class="h6 mb-0 fw-bold">Filtro</h3>
+									</div>
+									<p class="small text-body-secondary mb-0">Selecione o tipo <strong>Módulos</strong>.</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="p-3 bg-body-tertiary border rounded-3 h-100">
+									<div class="d-flex align-items-center mb-3">
+										<span class="badge rounded-pill bg-primary me-2 px-3 py-2">03</span>
+										<h3 class="h6 mb-0 fw-bold">Edição</h3>
+									</div>
+									<p class="small text-body-secondary mb-0">Clique em <i class="fa-solid fa-pencil-square text-primary fs-5 align-middle"></i> <strong>Editar</strong> para abrir o painel.</p>
+								</div>
+							</div>
+						</div>
+
+						<section id="item-settings-general" class="mb-5 pt-4">
+							<h3 class="h4 fw-bold mb-4 border-bottom pb-2">1. Configuração Geral</h3>
+							<div class="row align-items-center g-4">
+								<div class="col-lg-6">
+									<figure class="mb-0">
+										<img src="../assets/images/pt-br/docs-config-general-tab-pt-br.png" alt="Aba geral" class="img-fluid shadow-sm rounded border" loading="lazy" />
+										<figcaption class="small text-muted mt-2 font-italic">
+											<i class="fa-solid fa-magnifying-glass me-1"></i> Configuração Geral
+										</figcaption>
+									</figure>
+								</div>
+								<div class="col-lg-6">
+									<div class="table-responsive">
+										<table class="table table-sm align-middle border">
+											<thead class="table-light">
+												<tr><th>Parâmetro</th><th>Função</th></tr>
+											</thead>
+											<tbody class="small text-body-secondary">
+												<tr><td><strong>Preenchimento Automático</strong></td><td>Cria o número da fatura ao confirmar o pedido.</td></tr>
+												<tr><td><strong>Comprimento</strong></td><td>Define o número de dígitos do número sequencial <small>(Preenchimento de zeros à esquerda)</small>.</td></tr>
+												<tr><td><strong>Status</strong></td><td>Habilita o módulo.</td></tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section id="item-settings-prefix" class="mb-5 pt-4">
+							<h3 class="h4 fw-bold mb-4 border-bottom pb-2">2. Prefixo</h3>
+							<p class="text-body-secondary small mb-4">Esta aba permite compor os elementos de texto ou data.</p>
+							
+							<div class="row g-4">
+								<div class="col-lg-6">
+									<div class="sticky-lg-top" style="top: 2rem;">
+										<figure class="mb-0">
+											<img src="../assets/images/pt-br/docs-config-prefix-tab-pt-br.png" alt="Aba prefixo" class="img-fluid shadow-sm rounded border" loading="lazy" />
+											<figcaption class="small text-muted mt-2 font-italic">
+												<i class="fa-solid fa-magnifying-glass me-1"></i> Configuração de Prefixos
+											</figcaption>
+										</figure>
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="table-responsive">
+										<table class="table table-sm align-middle border text-body-secondary">
+											<thead class="table-light">
+												<tr><th style="width: 35%;">Parâmetro</th><th>Descrição</th></tr>
+											</thead>
+											<tbody class="small">
+												<tr>
+													<td><strong>Tipo</strong></td>
+													<td>Define se o elemento será um <strong>Texto Fixo</strong> ou uma <strong>Data Dinâmica</strong>.</td>
+												</tr>
+												<tr>
+													<td><strong>Conteúdo (Texto)</strong></td>
+													<td>O valor textual que será exibido (ex: <code>INV</code>).</td>
+												</tr>
+												<tr>
+													<td><strong>Formato (Data)</strong></td>
+													<td>O padrão de data desejado (ex: <code>Ano dois dígitos + mês</code>).</td>
+												</tr>
+												<tr>
+													<td><strong>Separador Interno</strong></td>
+													<td>Caractere que unirá este elemento ao próximo.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="mt-4 p-3 bg-body-tertiary border rounded-3 d-flex align-items-center shadow-sm">
+										<i class="fa-solid fa-lightbulb text-warning fs-4 me-3"></i>
+										<p class="small mb-0 text-body-secondary">
+											<strong>Dica:</strong> Você pode adicionar múltiplos elementos para criar prefixos complexos, como <code>INV-2026-ST01-</code>.
+										</p>
+									</div>
+								</div>
+							</div>
+						</section>
+					</article>
+
+					<article id="section-using" class="using-section border-top px-0 py-5 text-body">
+						<header class="mb-5">
+							<h2 class="h3 fw-bold">
+								<i class="fa-solid fa-hashtag text-primary me-2"></i>Gerar Números de Fatura
+							</h2>
+							<p class="text-body-secondary lead">Existem duas maneiras de gerar os números de fatura:</p>
+						</header>
+
+						<section id="item-using-auto" class="mb-5 pt-4">
+							<h3 class="h4 fw-bold mb-4 border-bottom pb-2">1. Automatizado</h3>
+							<p>Com o <strong>Preenchimento Automático</strong> (aba <a href="#item-settings-general">Configuração Geral</a>) ativado, o número da fatura é gerado no momento da confirmação do pedido, eliminando a necessidade de qualquer ação manual.</p>
+						</section>
+
+						<section id="item-using-manual" class="mb-5 pt-4">
+							<h3 class="h4 fw-bold mb-4 border-bottom pb-2">2. Manual</h3>
+							<p>Se a opção estiver desativada, o número da fatura segue o fluxo padrão do OpenCart. A geração deve ser feita manualmente seguindo estas etapas:</p>
+
+							<div class="row g-3 mb-5">
+								<div class="col-md-4">
+									<div class="p-3 bg-body-tertiary border rounded-3 h-100">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-primary me-2 px-3 py-2">01</span>
+											<h3 class="h6 mb-0 fw-bold">Vendas</h3>
+										</div>
+										<p class="small text-body-secondary mb-0">No menu lateral, acesse <strong>Vendas > Pedidos</strong>.</p>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="p-3 bg-body-tertiary border rounded-3 h-100">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-primary me-2 px-3 py-2">02</span>
+											<h3 class="h6 mb-0 fw-bold">Detalhes</h3>
+										</div>
+										<p class="small text-body-secondary mb-0">Localize o pedido desejado e clique no botão <i class="fa-solid fa-eye text-primary fs-5 align-middle"></i> <strong>Exibir</strong>.</p>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="p-3 bg-body-tertiary border rounded-3 h-100">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-primary me-2 px-3 py-2">03</span>
+											<h3 class="h6 mb-0 fw-bold">Gerar Fatura</h3>
+										</div>
+										<p class="small text-body-secondary mb-0">Clique em <i class="fa-solid fa-gear text-primary fs-5 align-middle"></i> <strong>Gerar</strong> ao lado do campo Fatura.</p>
+									</div>
+								</div>
+							</div>
+						</section>
+					</article>
+
+					<article id="section-uninstall" class="uninstall-section border-top px-0 py-5 text-body">
+						<header class="mb-5">
+							<h2 class="h3 fw-bold">
+								<i class="fa-solid fa-trash-can text-danger me-2"></i>Desinstalação
+							</h2>
+							<p class="text-body-secondary lead">Siga os passos abaixo para uma desinstalação limpa e segura.</p>
+						</header>
+
+						<div class="row g-4 mb-5">
+							<div class="col-md-6 col-lg-4">
+								<div class="card h-100 bg-body-tertiary border-0 shadow-sm">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-danger me-2 px-3 py-2">01</span>
+											<h3 class="h6 mb-0 fw-bold">Desativar</h3>
+										</div>
+										<p class="small text-body-secondary mb-0">
+											Vá em <strong>Extensões > Extensões</strong>, filtre por <strong>Módulos</strong>, localize o módulo e clique em 
+											<i class="fa-solid fa-minus-circle bg-danger text-white align-middle rounded-1" style="font-size: 0.65rem;padding:5px;"></i> 
+											<strong>Desinstalar</strong>.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<div class="card h-100 bg-body-tertiary border-0 shadow-sm">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-danger me-2 px-3 py-2">02</span>
+											<h3 class="h6 mb-0 fw-bold">Desinstalar</h3>
+										</div>
+										<p class="small text-body-secondary mb-0">
+											Localize o módulo na lista de <strong>Extensões > Instalador</strong> ou na lista de extensões e clique no ícone 
+											<i class="fa-solid fa-minus-circle bg-danger text-white align-middle rounded-1" style="font-size: 0.65rem;padding:5px;"></i>
+											<strong>Desinstalar</strong>.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-4">
+								<div class="card h-100 bg-body-tertiary border-0 shadow-sm">
+									<div class="card-body">
+										<div class="d-flex align-items-center mb-3">
+											<span class="badge rounded-pill bg-danger me-2 px-3 py-2">03</span>
+											<h3 class="h6 mb-0 fw-bold">Excluir</h3>
+										</div>
+										<p class="small text-body-secondary mb-0">
+											Ainda na lista de extensões instaladas, localize o arquivo e clique em 
+											<i class="fa-regular fa-trash-can bg-danger text-white align-middle rounded-1" style="font-size: 0.65rem;padding: 4px 5px;"></i> <strong>Excluir</strong>.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="alert alert-warning border-start border-4 border-warning rounded-3 shadow-sm mt-4">
+							<div class="d-flex">
+								<div class="me-3">
+									<i class="fa-solid fa-triangle-exclamation fs-3"></i>
+								</div>
+								<div>
+									<h4 class="h6 fw-bold mb-1">O que acontece com os dados?</h4>
+									<p class="small mb-0 text-body-secondary">
+										A desinstalação remove as configurações e arquivos do módulo. No entanto, os <strong>números gerados</strong> permanecerão salvos no banco de dados para evitar perda de integridade nos seus cadastros.
+									</p>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="px-0 py-5 border-top text-center" id="section-coffee">
+						<div class="row justify-content-center">
+							<div class="col-md-8 col-lg-6">
+								<div class="card bg-body-tertiary border-0 shadow-sm rounded-4">
+									<div class="card-body p-4 p-lg-5">
+										<div class="mb-3">
+											<i class="fa-solid fa-mug-hot text-warning fs-1"></i>
+										</div>
+										
+										<h2 class="h4 fw-bold mb-3">Curtiu o módulo?</h2>
+										
+										<p class="text-body-secondary mb-4">
+											Eu sei, o módulo é pago, mas se ele está salvando seu dia e otimizando seu sistema, que tal um cafezinho? 
+											Isso ajuda a manter o código limpo, o suporte rápido e a cafeína necessária para as próximas atualizações!
+										</p>
+
+										<div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center">
+											<a href="https://www.paypal.com/donate/?hosted_button_id=SPQH2B32XBJUW" 
+											target="_blank" 
+											rel="noopener" 
+											class="btn btn-primary btn-lg px-4 rounded-pill fw-bold shadow-sm">
+												<i class="fa-brands fa-paypal me-2"></i>
+												Mandar um café
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article id="section-license" class="license-section border-top pt-5 mt-5">
+						<div class="container">
+							<header class="mb-4 text-center">
+								<h2 class="h3 fw-bold">
+									<i class="fa-solid fa-scale-balanced text-primary me-2"></i>
+									Informações de Licença
+								</h2>
+								<p class="text-body-secondary">
+									Termos de licenciamento das versões Gratuita e Completa.
+								</p>
+							</header>
+
+							<div class="row justify-content-center">
+								<div class="col-lg-8 col-md-10">
+									<div class="p-4 bg-body-tertiary rounded-3 border shadow-sm">
+										<p class="small text-body-secondary mb-3">
+											Esta extensão (versões Gratuita e Completa) é licenciada sob a
+											<strong>GNU General Public License v3.0 (GPL-3.0)</strong>.
+										</p>
+
+										<p class="small text-body-secondary mb-3">
+											O uso e a modificação do software devem estar em conformidade com os termos estabelecidos pela licença GPL-3.0.
+										</p>
+
+										<p class="small text-body-secondary mb-3">
+											Suporte técnico e atualizações são fornecidos exclusivamente aos compradores originais através do marketplace oficial do OpenCart.
+										</p>
+
+										<p class="small text-body-secondary mb-0">
+											Para detalhes completos da licença, consulte o 
+											<a href="../LICENSE" target="_blank" rel="noopener">ficheiro LICENSE</a> 
+											incluído neste repositório ou visite a página oficial da 
+											<a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">
+												GNU General Public License v3.0
+											</a>.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<footer class="footer mt-5 pb-5 pt-4 border-top">
+						<div class="container text-center">
+							<p class="small text-body-secondary mb-1">
+								&copy; <script>document.write(new Date().getFullYear());</script> 
+								<a href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=Rodrigoabr" 
+								target="_blank" rel="noopener" class="text-decoration-none text-body-emphasis fw-medium">
+								Rodrigoab
+								</a> 
+								&bull; OpenCart Extensions
+							</p>
+							
+							<div class="text-body-tertiary" style="font-size: 0.7rem; letter-spacing: 0.02em;">
+								<i class="fa-solid fa-sync-alt fa-xs me-1"></i>
+								ATUALIZADO EM: 
+								<span class="text-uppercase">
+									<script>
+										const date = new Date(document.lastModified);
+										document.write(date.toLocaleDateString('pt-pt', { day: '2-digit', month: '2-digit', year: 'numeric' }));
+									</script>
+								</span>
+							</div>
+						</div>
+					</footer>
+
+				</main>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="../assets/js/scripts.js" defer></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
