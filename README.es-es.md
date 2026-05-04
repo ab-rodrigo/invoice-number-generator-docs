@@ -1,4 +1,4 @@
-# Generador de Números de Factura para OpenCart 4.x
+# Generador de Números de Factura para OpenCart 3.x / 4.x
 
 ![OpenCart Version](https://img.shields.io/badge/OpenCart-4.x-blue?style=for-the-badge&logo=opencart)
 ![License](https://img.shields.io/badge/License-GPL--3.0-green?style=for-the-badge)
